@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual Testing Portfolio - Login Functionality | Andreas Lang</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #2d3748;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+            padding: 2rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #667eea;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: #764ba2;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: #718096;
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            color: #4a5568;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        h2 i {
+            color: #667eea;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            color: #2d3748;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: #4a5568;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.85rem;
+        }
+
+        th, td {
+            border: 1px solid #e2e8f0;
+            padding: 0.6rem 0.8rem;
+            text-align: left;
+        }
+
+        th {
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background: #f7fafc;
+        }
+
+        tr:hover {
+            background: #edf2f7;
+        }
+
+        .test-case {
+            background: #f7fafc;
+            border-left: 4px solid #667eea;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .test-case h3 {
+            margin-top: 0;
+            color: #667eea;
+        }
+
+        .field-table {
+            width: auto;
+            margin-bottom: 1rem;
+        }
+
+        .field-table td:first-child {
+            font-weight: 600;
+            color: #4a5568;
+            width: 150px;
+        }
+
+        .expected-result {
+            background: #e6fffa;
+            border-left: 4px solid #38b2ac;
+            padding: 0.8rem;
+            margin-top: 0.5rem;
+            border-radius: 0 4px 4px 0;
+            font-size: 0.9rem;
+        }
+
+        .expected-result strong {
+            color: #234e52;
+        }
+
+        .bug-report {
+            background: #fff5f5;
+            border-left: 4px solid #e53e3e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .bug-report h3 {
+            color: #c53030;
+            margin-top: 0;
+        }
+
+        .summary-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .summary-box h3 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .summary-item {
+            text-align: center;
+        }
+
+        .summary-item .number {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .summary-item .label {
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            margin-right: 0.3rem;
+        }
+
+        .tag.high { background: #e53e3e; }
+        .tag.medium { background: #dd6b20; }
+        .tag.low { background: #38a169; }
+
+        .tools-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .tool-tag {
+            background: #edf2f7;
+            color: #4a5568;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+        }
+
+        footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+            color: #718096;
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.4rem;
+            }
+
+            .summary-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            table {
+                font-size: 0.75rem;
+            }
+
+            th, td {
+                padding: 0.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to CV
+        </a>
+
+        <h1>Manual Testing Portfolio</h1>
+        <p class="subtitle">Login Functionality - Black-box Testing</p>
+
+        <div class="summary-box">
+            <h3>Test Execution Summary</h3>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="number">8</div>
+                    <div class="label">Test Cases</div>
+                </div>
+                <div class="summary-item">
+                    <div class="number">7</div>
+                    <div class="label">Passed</div>
+                </div>
+                <div class="summary-item">
+                    <div class="number">1</div>
+                    <div class="label">Failed</div>
+                </div>
+                <div class="summary-item">
+                    <div class="number">87.5%</div>
+                    <div class="label">Pass Rate</div>
+                </div>
+            </div>
+        </div>
+
+        <h2><i class="fas fa-list-check"></i> Test Scenarios</h2>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Scenario</th>
+                <th>Priority</th>
+            </tr>
+            <tr>
+                <td>TS-01</td>
+                <td>Verify successful login with valid credentials</td>
+                <td><span class="tag high">High</span></td>
+            </tr>
+            <tr>
+                <td>TS-02</td>
+                <td>Verify login fails with invalid credentials</td>
+                <td><span class="tag high">High</span></td>
+            </tr>
+            <tr>
+                <td>TS-03</td>
+                <td>Verify login form validation</td>
+                <td><span class="tag medium">Medium</span></td>
+            </tr>
+            <tr>
+                <td>TS-04</td>
+                <td>Verify password security features</td>
+                <td><span class="tag high">High</span></td>
+            </tr>
+            <tr>
+                <td>TS-05</td>
+                <td>Verify "Remember Me" functionality</td>
+                <td><span class="tag low">Low</span></td>
+            </tr>
+            <tr>
+                <td>TS-06</td>
+                <td>Verify "Forgot Password" link</td>
+                <td><span class="tag medium">Medium</span></td>
+            </tr>
+        </table>
+
+        <h2><i class="fas fa-vial"></i> Test Cases</h2>
+
+        <div class="test-case">
+            <h3>TC-001: Successful Login with Valid Credentials</h3>
+            <table class="field-table">
+                <tr><td>Test Case ID</td><td>TC-001</td></tr>
+                <tr><td>Test Scenario</td><td>TS-01</td></tr>
+                <tr><td>Priority</td><td><span class="tag high">High</span></td></tr>
+                <tr><td>Preconditions</td><td>User account exists in the system</td></tr>
+            </table>
+            <table>
+                <tr>
+                    <th>Step</th>
+                    <th>Action</th>
+                    <th>Test Data</th>
+                    <th>Expected Result</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Navigate to login page</td>
+                    <td>URL: /login</td>
+                    <td>Login page is displayed</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Enter valid username</td>
+                    <td>testuser@email.com</td>
+                    <td>Username field accepts input</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Enter valid password</td>
+                    <td>ValidPass123!</td>
+                    <td>Password field shows masked characters</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Click "Login" button</td>
+                    <td>-</td>
+                    <td>User is redirected to dashboard</td>
+                </tr>
+            </table>
+            <div class="expected-result">
+                <strong>Expected Result:</strong> User successfully logs in and sees the dashboard with welcome message.
+            </div>
+        </div>
+
+        <div class="test-case">
+            <h3>TC-002: Login Fails with Invalid Password</h3>
+            <table class="field-table">
+                <tr><td>Test Case ID</td><td>TC-002</td></tr>
+                <tr><td>Test Scenario</td><td>TS-02</td></tr>
+                <tr><td>Priority</td><td><span class="tag high">High</span></td></tr>
+                <tr><td>Preconditions</td><td>User account exists in the system</td></tr>
+            </table>
+            <table>
+                <tr>
+                    <th>Step</th>
+                    <th>Action</th>
+                    <th>Test Data</th>
+                    <th>Expected Result</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Navigate to login page</td>
+                    <td>URL: /login</td>
+                    <td>Login page is displayed</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Enter valid username</td>
+                    <td>testuser@email.com</td>
+                    <td>Username field accepts input</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Enter invalid password</td>
+                    <td>WrongPassword</td>
+                    <td>Password field shows masked characters</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Click "Login" button</td>
+                    <td>-</td>
+                    <td>Error message is displayed</td>
+                </tr>
+            </table>
+            <div class="expected-result">
+                <strong>Expected Result:</strong> Login fails. Error message "Invalid username or password" is displayed. User remains on login page.
+            </div>
+        </div>
+
+        <div class="test-case">
+            <h3>TC-007: SQL Injection Attempt</h3>
+            <table class="field-table">
+                <tr><td>Test Case ID</td><td>TC-007</td></tr>
+                <tr><td>Test Scenario</td><td>TS-04 (Security)</td></tr>
+                <tr><td>Priority</td><td><span class="tag high">High</span></td></tr>
+                <tr><td>Preconditions</td><td>None</td></tr>
+            </table>
+            <table>
+                <tr>
+                    <th>Step</th>
+                    <th>Action</th>
+                    <th>Test Data</th>
+                    <th>Expected Result</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Navigate to login page</td>
+                    <td>URL: /login</td>
+                    <td>Login page is displayed</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Enter SQL injection in username</td>
+                    <td>' OR '1'='1</td>
+                    <td>Field accepts input</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Enter any password</td>
+                    <td>anything</td>
+                    <td>Password field accepts input</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Click "Login" button</td>
+                    <td>-</td>
+                    <td>Login fails safely</td>
+                </tr>
+            </table>
+            <div class="expected-result">
+                <strong>Expected Result:</strong> Application handles input safely. No SQL error is exposed. Standard "Invalid username or password" message is shown.
+            </div>
+        </div>
+
+        <h2><i class="fas fa-brain"></i> Testing Techniques Used</h2>
+
+        <h3>Equivalence Partitioning</h3>
+        <table>
+            <tr>
+                <th>Partition</th>
+                <th>Valid/Invalid</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td>Valid username + valid password</td>
+                <td><span class="tag" style="background:#38a169">Valid</span></td>
+                <td>testuser@email.com / ValidPass123!</td>
+            </tr>
+            <tr>
+                <td>Valid username + invalid password</td>
+                <td><span class="tag high">Invalid</span></td>
+                <td>testuser@email.com / WrongPass</td>
+            </tr>
+            <tr>
+                <td>Invalid username + valid password</td>
+                <td><span class="tag high">Invalid</span></td>
+                <td>nobody@email.com / ValidPass123!</td>
+            </tr>
+            <tr>
+                <td>Empty username</td>
+                <td><span class="tag high">Invalid</span></td>
+                <td>(empty)</td>
+            </tr>
+            <tr>
+                <td>Empty password</td>
+                <td><span class="tag high">Invalid</span></td>
+                <td>(empty)</td>
+            </tr>
+        </table>
+
+        <h3>Boundary Value Analysis</h3>
+        <table>
+            <tr>
+                <th>Boundary</th>
+                <th>Test Values</th>
+                <th>Expected</th>
+            </tr>
+            <tr>
+                <td>Password min length (8)</td>
+                <td>7 chars, 8 chars, 9 chars</td>
+                <td>7: fail, 8: pass, 9: pass</td>
+            </tr>
+            <tr>
+                <td>Username max length (50)</td>
+                <td>49 chars, 50 chars, 51 chars</td>
+                <td>49: pass, 50: pass, 51: fail</td>
+            </tr>
+        </table>
+
+        <h2><i class="fas fa-bug"></i> Bug Report</h2>
+
+        <div class="bug-report">
+            <h3>BUG-001: Error Message Reveals User Existence</h3>
+            <table class="field-table">
+                <tr><td>Bug ID</td><td>BUG-001</td></tr>
+                <tr><td>Severity</td><td><span class="tag medium">Medium</span></td></tr>
+                <tr><td>Priority</td><td><span class="tag high">High</span></td></tr>
+                <tr><td>Environment</td><td>Chrome 120, Windows 11</td></tr>
+            </table>
+
+            <p><strong>Description:</strong> When attempting to log in with a non-existent username, the error message "User not found" is displayed. This reveals to potential attackers which usernames exist in the system.</p>
+
+            <p><strong>Steps to Reproduce:</strong></p>
+            <ol style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                <li>Navigate to /login</li>
+                <li>Enter username: nonexistent@test.com</li>
+                <li>Enter password: AnyPassword123</li>
+                <li>Click "Login" button</li>
+            </ol>
+
+            <p><strong>Actual Result:</strong> Error message: "User not found"</p>
+            <p><strong>Expected Result:</strong> Generic error message: "Invalid username or password"</p>
+            <p><strong>Security Impact:</strong> Attackers can enumerate valid usernames by observing different error messages.</p>
+            <p><strong>Suggested Fix:</strong> Use the same generic error message for all authentication failures.</p>
+        </div>
+
+        <h2><i class="fas fa-tools"></i> Tools Used</h2>
+        <div class="tools-list">
+            <span class="tool-tag"><i class="fas fa-file-alt"></i> Manual Documentation</span>
+            <span class="tool-tag"><i class="fab fa-chrome"></i> Chrome DevTools</span>
+            <span class="tool-tag"><i class="fab fa-jira"></i> Jira (format)</span>
+        </div>
+
+        <footer>
+            <p>Created by <a href="../index.html">Andreas Lang</a> - Junior QA Engineer</p>
+            <p><a href="https://github.com/andyMcLang" target="_blank"><i class="fab fa-github"></i> GitHub</a> |
+               <a href="https://www.linkedin.com/in/andreas-lang-digi/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></p>
+        </footer>
+    </div>
+</body>
+</html>
