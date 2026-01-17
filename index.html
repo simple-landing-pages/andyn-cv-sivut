@@ -221,6 +221,83 @@
             color: #667eea;
         }
 
+        /* QA Portfolio */
+        .portfolio-section {
+            grid-column: 1 / -1;
+            background: #f7fafc;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .portfolio-section h2 {
+            font-size: 1.1rem;
+            color: #2d3748;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .portfolio-section h2 i {
+            color: #667eea;
+        }
+
+        .portfolio-item {
+            background: white;
+            padding: 0.8rem;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .portfolio-item h3 {
+            font-size: 0.9rem;
+            color: #4a5568;
+            margin-bottom: 0.3rem;
+        }
+
+        .portfolio-item .portfolio-desc {
+            font-size: 0.8rem;
+            color: #718096;
+            margin-bottom: 0.4rem;
+        }
+
+        .portfolio-item .portfolio-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.3rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .portfolio-item .portfolio-tags span {
+            background: #edf2f7;
+            color: #667eea;
+            padding: 0.15rem 0.5rem;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            font-weight: 500;
+        }
+
+        .portfolio-item .portfolio-link {
+            font-size: 0.75rem;
+        }
+
+        .portfolio-item .portfolio-link a {
+            color: #667eea;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .portfolio-item .portfolio-link a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+
         /* Footer */
         footer {
             background: #2d3748;
@@ -371,6 +448,52 @@
                 testausstrategian AI-generoidulle koodille (Jest, Supertest, Playwright). 6 vuotta IT-tuki/toimistoteknikko
                 -kokemusta opetti käyttäjäymmärryksen - tiedän että paras koodi ei tarkoita mitään jos käyttäjät eivät
                 saa työtä tehtyä.
+            </div>
+
+            <div class="portfolio-section">
+                <h2><i class="fas fa-flask"></i> QA Portfolio</h2>
+                <div class="portfolio-item">
+                    <h3>Manual Testing – Login Functionality</h3>
+                    <div class="portfolio-desc">
+                        Test scenarios & test cases for login feature. Black-box testing with equivalence partitioning and boundary value analysis.
+                    </div>
+                    <div class="portfolio-tags">
+                        <span>Test Cases</span>
+                        <span>Bug Reporting</span>
+                        <span>Black-box Testing</span>
+                    </div>
+                    <div class="portfolio-link">
+                        <a href="portfolio/manual-testing-login.md" target="_blank"><i class="fas fa-file-alt"></i> View Test Documentation</a>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <h3>UI Test Automation – Playwright</h3>
+                    <div class="portfolio-desc">
+                        End-to-end UI test automation. Login flow with positive & negative scenarios.
+                    </div>
+                    <div class="portfolio-tags">
+                        <span>Playwright</span>
+                        <span>JavaScript</span>
+                        <span>E2E Testing</span>
+                    </div>
+                    <div class="portfolio-link">
+                        <a href="https://github.com/andyMcLang" target="_blank"><i class="fab fa-github"></i> GitHub Repository (tulossa)</a>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <h3>API Testing – REST Endpoints</h3>
+                    <div class="portfolio-desc">
+                        API smoke tests validating response status and payload structure.
+                    </div>
+                    <div class="portfolio-tags">
+                        <span>Postman</span>
+                        <span>API Testing</span>
+                        <span>Jest/Supertest</span>
+                    </div>
+                    <div class="portfolio-link">
+                        <a href="https://github.com/andyMcLang" target="_blank"><i class="fab fa-github"></i> GitHub Repository (tulossa)</a>
+                    </div>
+                </div>
             </div>
 
             <div class="section">
