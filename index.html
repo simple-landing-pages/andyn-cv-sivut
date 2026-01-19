@@ -12,6 +12,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -69,15 +73,21 @@
             line-height: 1.5;
         }
 
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
         .cta-button {
             display: inline-block;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 0.9rem 2rem;
+            padding: 0.9rem 1.8rem;
             border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: transform 0.2s, box-shadow 0.2s;
             box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
         }
@@ -89,6 +99,17 @@
 
         .cta-button i {
             margin-right: 0.5rem;
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid #cbd5e0;
+            box-shadow: none;
+        }
+
+        .cta-button.secondary:hover {
+            background: rgba(255,255,255,0.1);
+            box-shadow: none;
         }
 
         /* Main Content */
@@ -123,14 +144,16 @@
             margin-bottom: 2.5rem;
         }
 
-        .value-prop p {
-            font-size: 1rem;
-            color: #4a5568;
+        .value-prop h2 {
+            font-size: 1.2rem;
+            color: #2d3748;
             margin-bottom: 0.8rem;
         }
 
-        .value-prop p:last-child {
-            margin-bottom: 0;
+        .value-prop p {
+            font-size: 1rem;
+            color: #4a5568;
+            line-height: 1.6;
         }
 
         /* Services */
@@ -177,10 +200,8 @@
             margin: 2rem 0;
         }
 
-        .cta-section p {
-            font-size: 1rem;
-            color: #4a5568;
-            margin-bottom: 1rem;
+        .cta-section .cta-button {
+            margin-top: 0;
         }
 
         /* Portfolio */
@@ -206,7 +227,7 @@
             margin-bottom: 0.8rem;
         }
 
-        .portfolio-detail:last-child {
+        .portfolio-detail:last-of-type {
             margin-bottom: 0;
         }
 
@@ -301,20 +322,23 @@
         footer {
             background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
             color: white;
-            padding: 2rem;
+            padding: 2.5rem 2rem;
             text-align: center;
         }
 
         footer h2 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            color: #90cdf4;
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            color: white;
         }
 
         footer .subtitle {
-            font-size: 0.95rem;
+            font-size: 1rem;
             color: #cbd5e0;
             margin-bottom: 1.5rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .contact-info {
@@ -358,6 +382,10 @@
                 font-size: 1.4rem;
             }
 
+            .cta-buttons {
+                justify-content: center;
+            }
+
             .profile-photo {
                 width: 130px;
                 height: 130px;
@@ -396,6 +424,11 @@
                 font-size: 0.9rem;
             }
 
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
             main {
                 padding: 1.5rem 1rem;
             }
@@ -409,11 +442,16 @@
             <div class="hero-content">
                 <img src="Kuvat/Andy_Pikku.jpg" alt="Andreas Lang" class="profile-photo">
                 <div class="hero-text">
-                    <h1>Autan varmistamaan, että ohjelmistosi toimii oikein</h1>
-                    <p class="subtitle">Etsitkö testaajaa projektiin tai tarvitsetko apua laadunvarmistuksessa? Teen manuaalitestausta, bugiraportointia ja testausdokumentaatiota – selkeästi ja tehokkaasti.</p>
-                    <a href="mailto:Andreas.lang@saunalahti.fi" class="cta-button">
-                        <i class="fas fa-envelope"></i> Ota yhteyttä
-                    </a>
+                    <h1>Autan varmistamaan, että ohjelmistosi toimivat oikein.</h1>
+                    <p class="subtitle">Ohjelmistotestausta, QA-työtä ja teknistä tukea projekteihin, joissa virheet halutaan kiinni ennen käyttäjiä.</p>
+                    <div class="cta-buttons">
+                        <a href="mailto:Andreas.lang@saunalahti.fi" class="cta-button">
+                            <i class="fas fa-envelope"></i> Ota yhteyttä
+                        </a>
+                        <a href="#portfolio" class="cta-button secondary">
+                            <i class="fas fa-folder-open"></i> Katso esimerkit työstäni
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -421,54 +459,53 @@
         <main>
             <!-- Value Proposition -->
             <div class="value-prop">
-                <p><strong>Löydän virheet ennen kuin käyttäjäsi löytävät ne.</strong></p>
-                <p>Testaan sovelluksia järjestelmällisesti, raportoin löydökset selkeästi ja dokumentoin kaiken niin, että tiimisi ymmärtää mitä on testattu. 6 vuoden IT-tukikokemus opetti, että tekninen osaaminen ei riitä – pitää myös osata kommunikoida selkeästi ja ymmärtää loppukäyttäjän näkökulma.</p>
+                <h2>Miksi tästä on sinulle hyötyä?</h2>
+                <p>Autan tunnistamaan käyttöliittymä-, toiminnalliset ja rajapintavirheet ennen tuotantoa. Teen testauksesta selkeää, dokumentoitua ja helposti hyödynnettävää kehitystiimeille ja pienille projekteille.</p>
             </div>
 
             <!-- Services -->
             <section class="section">
-                <h2 class="section-title">Mitä voin tehdä sinulle</h2>
+                <h2 class="section-title">Miten voin auttaa?</h2>
                 <div class="services-grid">
                     <div class="service-card">
-                        <h3><i class="fas fa-search"></i> Manuaalinen testaus</h3>
-                        <p>Testaan sovelluksesi toiminnallisuudet käyttäjän näkökulmasta. Löydän virheet, jotka automaatio ei huomaa.</p>
+                        <h3><i class="fas fa-search"></i> Manuaalinen ohjelmistotestaus</h3>
+                        <p>Testaan sovelluksia käyttäjän näkökulmasta ja dokumentoin löydökset selkeästi. Sopii projekteihin, joissa tarvitaan nopeasti lisäsilmäpari.</p>
                     </div>
                     <div class="service-card">
                         <h3><i class="fas fa-desktop"></i> UI- ja API-testaus</h3>
-                        <p>Varmistan, että käyttöliittymä toimii oikein ja rajapinnat palauttavat oikeat vastaukset.</p>
+                        <p>Testaan käyttöliittymiä ja rajapintoja varmistaakseni, että perustoiminnot ja kriittiset polut toimivat odotetusti.</p>
                     </div>
                     <div class="service-card">
-                        <h3><i class="fas fa-file-alt"></i> Dokumentaatio ja bugiraportointi</h3>
-                        <p>Kirjoitan selkeät bugiraportit ja testausdokumentit. Kehittäjät ymmärtävät heti, mitä pitää korjata.</p>
+                        <h3><i class="fas fa-file-alt"></i> Testausdokumentaatio ja bugiraportointi</h3>
+                        <p>Laadin testitapaukset, tarkistuslistat ja bugiraportit, joita kehittäjien on helppo hyödyntää.</p>
                     </div>
                     <div class="service-card">
                         <h3><i class="fas fa-robot"></i> Kevyt testiautomaatio</h3>
-                        <p>Rakennan yksinkertaisia automaatiotestejä toistuviin testitapauksiin (Playwright, Jest).</p>
+                        <p>Rakennan yksinkertaisia automaatiotestejä tukemaan manuaalista testausta ja regressiotestausta.</p>
                     </div>
                 </div>
             </section>
 
             <!-- CTA mid-page -->
             <div class="cta-section">
-                <p>Tarvitsetko testaajaa projektiin tai haluat keskustella tarpeistasi?</p>
                 <a href="mailto:Andreas.lang@saunalahti.fi" class="cta-button">
-                    <i class="fas fa-comments"></i> Keskustellaan
+                    <i class="fas fa-comments"></i> Keskustellaan tarpeestasi
                 </a>
             </div>
 
             <!-- Portfolio -->
-            <section class="section">
-                <h2 class="section-title">Näyttöjä työstäni</h2>
+            <section class="section" id="portfolio">
+                <h2 class="section-title">Esimerkkejä työstäni</h2>
 
                 <div class="portfolio-item">
-                    <h3>Kirjautumistoiminnon testaus – testitapaukset ja bugiraportti</h3>
+                    <h3>Kirjautumistoiminnon testaus</h3>
                     <div class="portfolio-detail">
-                        <strong>Ongelma:</strong>
-                        <p>Login-toiminnallisuus tarvitsi kattavan testauskattavuuden ennen julkaisua.</p>
+                        <strong>Haaste:</strong>
+                        <p>Login-toiminnallisuus tarvitsi kattavan testauskattavuuden ja dokumentaation ennen julkaisua.</p>
                     </div>
                     <div class="portfolio-detail">
                         <strong>Mitä tein:</strong>
-                        <p>Suunnittelin 8 testitapausta käyttäen black-box -tekniikoita (equivalence partitioning, boundary value analysis). Löysin tietoturvaongelman virheviesteissä.</p>
+                        <p>Suunnittelin 8 testitapausta käyttäen black-box -tekniikoita (equivalence partitioning, boundary value analysis). Dokumentoin löydökset ja laadin bugiraportin tietoturvaongelmasta.</p>
                     </div>
                     <div class="portfolio-detail">
                         <strong>Hyöty:</strong>
@@ -485,14 +522,14 @@
                 </div>
 
                 <div class="portfolio-item">
-                    <h3>Opinnäytetyö: Testausstrategia AI-generoidulle koodille</h3>
+                    <h3>Testausstrategia AI-generoidulle koodille (opinnäytetyö)</h3>
                     <div class="portfolio-detail">
-                        <strong>Ongelma:</strong>
-                        <p>AI-generoidun koodin laatu on epätasaista. Miten testata sitä tehokkaasti?</p>
+                        <strong>Haaste:</strong>
+                        <p>AI-generoidun koodin laatu vaihtelee. Miten testata sitä järjestelmällisesti ja tehokkaasti?</p>
                     </div>
                     <div class="portfolio-detail">
                         <strong>Mitä tein:</strong>
-                        <p>Rakensin kolmitasoisen testausstrategian: Jest unit-testit, Supertest API-testit, Playwright E2E-testit. 17 testiä yhteensä.</p>
+                        <p>Rakensin kolmitasoisen testausstrategian: Jest unit-testit, Supertest API-testit, Playwright E2E-testit. 17 testiä yhteensä, kattava dokumentaatio.</p>
                     </div>
                     <div class="portfolio-detail">
                         <strong>Hyöty:</strong>
@@ -548,10 +585,10 @@
             </section>
         </main>
 
-        <!-- Footer -->
+        <!-- Footer / Contact -->
         <footer>
-            <h2>Kiinnostuitko?</h2>
-            <p class="subtitle">Laita viestiä – keskustellaan miten voin auttaa.</p>
+            <h2>Tarvitsetko testausta tai QA-apua?</h2>
+            <p class="subtitle">Ota yhteyttä matalalla kynnyksellä – voimme aloittaa pienestä tehtävästä tai keskustella tarpeestasi.</p>
             <div class="contact-info">
                 <a href="mailto:Andreas.lang@saunalahti.fi">
                     <i class="fas fa-envelope"></i> Andreas.lang@saunalahti.fi
@@ -567,7 +604,7 @@
                 </a>
             </div>
             <a href="mailto:Andreas.lang@saunalahti.fi" class="cta-button">
-                <i class="fas fa-paper-plane"></i> Ota yhteyttä
+                <i class="fas fa-paper-plane"></i> Ota yhteyttä nyt
             </a>
         </footer>
     </div>
