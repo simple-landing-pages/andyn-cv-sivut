@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andreas Lang - Ohjelmistotestaus & QA | Varmistan että sovelluksesi toimii</title>
+    <title>Andreas Lang – IT-tukiasiantuntija | Microsoft 365 | Helsinki</title>
+    <meta name="description" content="Ratkaisukeskeinen IT-tukiasiantuntija Helsingissä. Microsoft 365, käyttäjätuki, Service Desk. Etsin IT-tuki / Helpdesk -roolia.">
+    <meta name="keywords" content="IT-tuki Helsinki, Service Desk asiantuntija, Helpdesk tukihenkilö, Microsoft 365 tuki, IT support Finland, käyttäjätuki, Windows tuki">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -17,24 +19,24 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #2d3748;
+            font-family: 'Segoe UI', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #f0f4f8;
+            color: #1a202c;
             line-height: 1.6;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 920px;
             margin: 0 auto;
             background: white;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.12);
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+            background: linear-gradient(135deg, #0078D4 0%, #005a9e 100%);
             color: white;
-            padding: 3rem 2rem;
+            padding: 3rem 2.5rem;
         }
 
         .hero-content {
@@ -48,8 +50,8 @@
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            border: 4px solid #667eea;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            border: 4px solid rgba(255,255,255,0.3);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
             object-fit: cover;
             flex-shrink: 0;
         }
@@ -59,62 +61,70 @@
             min-width: 280px;
         }
 
-        .hero h1 {
-            font-size: 1.7rem;
-            margin-bottom: 0.8rem;
+        .hero-name {
+            font-size: 1.8rem;
             font-weight: 700;
-            line-height: 1.3;
+            margin-bottom: 0.3rem;
         }
 
-        .hero .subtitle {
+        .hero-title {
             font-size: 1rem;
-            color: #cbd5e0;
-            margin-bottom: 1.5rem;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .hero h1 {
+            font-size: 1.15rem;
+            font-weight: 400;
             line-height: 1.5;
+            margin-bottom: 1.5rem;
+            color: rgba(255,255,255,0.95);
         }
 
         .cta-buttons {
             display: flex;
-            gap: 1rem;
+            gap: 0.8rem;
             flex-wrap: wrap;
         }
 
         .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 0.9rem 1.8rem;
-            border-radius: 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.95rem;
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            font-size: 0.9rem;
+            transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
         }
 
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        .cta-button.primary {
+            background: white;
+            color: #0078D4;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
         }
 
-        .cta-button i {
-            margin-right: 0.5rem;
+        .cta-button.primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
 
         .cta-button.secondary {
-            background: transparent;
-            border: 2px solid #cbd5e0;
-            box-shadow: none;
+            background: rgba(255,255,255,0.15);
+            color: white;
+            border: 1.5px solid rgba(255,255,255,0.4);
         }
 
         .cta-button.secondary:hover {
-            background: rgba(255,255,255,0.1);
-            box-shadow: none;
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-1px);
         }
 
         /* Main Content */
         main {
-            padding: 2.5rem 2rem;
+            padding: 2.5rem 2.5rem;
         }
 
         /* Section styling */
@@ -128,229 +138,280 @@
 
         .section-title {
             font-size: 1.3rem;
-            color: #2d3748;
-            margin-bottom: 1rem;
+            color: #1a202c;
+            margin-bottom: 1.2rem;
             padding-bottom: 0.5rem;
-            border-bottom: 3px solid #667eea;
+            border-bottom: 3px solid #0078D4;
             display: inline-block;
         }
 
-        /* Value Proposition */
-        .value-prop {
-            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+        /* Intro / Kuka olen */
+        .intro {
+            background: #f8fafc;
             padding: 1.8rem;
-            border-radius: 12px;
-            border-left: 5px solid #667eea;
+            border-radius: 10px;
+            border-left: 4px solid #0078D4;
             margin-bottom: 2.5rem;
         }
 
-        .value-prop h2 {
+        .intro h2 {
             font-size: 1.2rem;
-            color: #2d3748;
+            color: #1a202c;
             margin-bottom: 0.8rem;
         }
 
-        .value-prop p {
-            font-size: 1rem;
+        .intro p {
+            font-size: 0.95rem;
             color: #4a5568;
-            line-height: 1.6;
+            line-height: 1.7;
+            margin-bottom: 0.6rem;
         }
 
-        /* Services */
-        .services-grid {
+        .intro p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Skills Cards */
+        .skills-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 1.2rem;
         }
 
-        .service-card {
-            background: #f7fafc;
-            padding: 1.3rem;
+        .skill-card {
+            background: #f8fafc;
+            padding: 1.4rem;
             border-radius: 10px;
             border: 1px solid #e2e8f0;
             transition: transform 0.2s, box-shadow 0.2s;
         }
 
-        .service-card:hover {
+        .skill-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
         }
 
-        .service-card h3 {
+        .skill-card h3 {
             font-size: 1rem;
-            color: #667eea;
-            margin-bottom: 0.5rem;
+            color: #0078D4;
+            margin-bottom: 0.7rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
 
-        .service-card p {
-            font-size: 0.9rem;
-            color: #4a5568;
-            line-height: 1.5;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: #edf2f7;
-            padding: 1.5rem;
-            border-radius: 10px;
+        .skill-card h3 i {
+            font-size: 1.1rem;
+            width: 24px;
             text-align: center;
-            margin: 2rem 0;
         }
 
-        .cta-section .cta-button {
-            margin-top: 0;
+        .skill-card ul {
+            list-style: none;
+            padding: 0;
         }
 
-        /* Portfolio */
-        .portfolio-item {
-            background: #f7fafc;
-            padding: 1.5rem;
+        .skill-card ul li {
+            font-size: 0.88rem;
+            color: #4a5568;
+            padding: 0.2rem 0;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .skill-card ul li::before {
+            content: "›";
+            position: absolute;
+            left: 0;
+            color: #0078D4;
+            font-weight: 700;
+        }
+
+        .skill-card .badge {
+            display: inline-block;
+            background: #dbeafe;
+            color: #0078D4;
+            padding: 0.15rem 0.5rem;
+            border-radius: 10px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        /* Work Experience */
+        .experience-item {
+            background: #f8fafc;
+            padding: 1.4rem;
             border-radius: 10px;
             border: 1px solid #e2e8f0;
-            margin-bottom: 1.2rem;
-        }
-
-        .portfolio-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .portfolio-item h3 {
-            font-size: 1.05rem;
-            color: #2d3748;
             margin-bottom: 1rem;
         }
 
-        .portfolio-detail {
-            margin-bottom: 0.8rem;
-        }
-
-        .portfolio-detail:last-of-type {
+        .experience-item:last-child {
             margin-bottom: 0;
         }
 
-        .portfolio-detail strong {
-            color: #667eea;
-            font-size: 0.85rem;
-            display: block;
-            margin-bottom: 0.2rem;
-        }
-
-        .portfolio-detail p {
-            font-size: 0.9rem;
-            color: #4a5568;
-        }
-
-        .portfolio-tags {
+        .experience-header {
             display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
             flex-wrap: wrap;
-            gap: 0.4rem;
-            margin-top: 1rem;
-        }
-
-        .portfolio-tags span {
-            background: #667eea;
-            color: white;
-            padding: 0.25rem 0.7rem;
-            border-radius: 15px;
-            font-size: 0.75rem;
-        }
-
-        .portfolio-link {
-            margin-top: 1rem;
-        }
-
-        .portfolio-link a {
-            color: #667eea;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        .portfolio-link a:hover {
-            color: #764ba2;
-            text-decoration: underline;
-        }
-
-        /* Background section */
-        .background-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-        }
-
-        .background-column h3 {
-            font-size: 0.95rem;
-            color: #667eea;
-            margin-bottom: 0.8rem;
-            padding-bottom: 0.4rem;
-            border-bottom: 2px solid #e2e8f0;
-        }
-
-        .background-item {
+            gap: 0.3rem;
             margin-bottom: 0.7rem;
-            font-size: 0.85rem;
         }
 
-        .background-item strong {
+        .experience-header h3 {
+            font-size: 1rem;
+            color: #1a202c;
+        }
+
+        .experience-header .period {
+            font-size: 0.82rem;
+            color: #718096;
+            font-weight: 500;
+        }
+
+        .experience-item ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .experience-item ul li {
+            font-size: 0.88rem;
             color: #4a5568;
-            display: block;
+            padding: 0.2rem 0;
+            padding-left: 1rem;
+            position: relative;
         }
 
-        .background-item span {
+        .experience-item ul li::before {
+            content: "›";
+            position: absolute;
+            left: 0;
+            color: #0078D4;
+            font-weight: 700;
+        }
+
+        .experience-item .learning {
+            font-size: 0.82rem;
+            color: #0078D4;
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+
+        /* Education */
+        .education-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .education-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            padding: 1rem 1.2rem;
+            background: #f8fafc;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .education-item i {
+            color: #0078D4;
+            font-size: 1.1rem;
+            margin-top: 0.15rem;
+        }
+
+        .education-item .edu-content {
+            flex: 1;
+        }
+
+        .education-item strong {
+            display: block;
+            font-size: 0.95rem;
+            color: #1a202c;
+        }
+
+        .education-item span {
+            font-size: 0.85rem;
             color: #718096;
         }
 
-        .skills-compact {
+        .education-item .in-progress {
+            display: inline-block;
+            background: #dbeafe;
+            color: #0078D4;
+            padding: 0.1rem 0.5rem;
+            border-radius: 10px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            margin-top: 0.3rem;
+        }
+
+        /* Why Me section */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.2rem;
+        }
+
+        .why-card {
+            background: linear-gradient(135deg, #f0f7ff 0%, #f8fafc 100%);
+            padding: 1.3rem;
+            border-radius: 10px;
+            border: 1px solid #dbeafe;
+        }
+
+        .why-card h3 {
+            font-size: 0.95rem;
+            color: #0078D4;
+            margin-bottom: 0.5rem;
             display: flex;
-            flex-wrap: wrap;
+            align-items: center;
             gap: 0.4rem;
         }
 
-        .skill-tag {
-            background: #e2e8f0;
+        .why-card p {
+            font-size: 0.88rem;
             color: #4a5568;
-            padding: 0.2rem 0.6rem;
-            border-radius: 12px;
-            font-size: 0.75rem;
+            line-height: 1.5;
+            font-style: italic;
         }
 
         /* Footer */
         footer {
-            background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
             color: white;
-            padding: 2.5rem 2rem;
+            padding: 2.5rem;
             text-align: center;
         }
 
         footer h2 {
             font-size: 1.4rem;
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.6rem;
             color: white;
         }
 
         footer .subtitle {
-            font-size: 1rem;
-            color: #cbd5e0;
+            font-size: 0.95rem;
+            color: #a0aec0;
             margin-bottom: 1.5rem;
             max-width: 500px;
             margin-left: auto;
             margin-right: auto;
+            line-height: 1.6;
         }
 
-        .contact-info {
+        .contact-grid {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 1.5rem;
             flex-wrap: wrap;
             margin-bottom: 1.5rem;
         }
 
-        .contact-info a {
-            color: #cbd5e0;
+        .contact-grid a {
+            color: #a0aec0;
             text-decoration: none;
             font-size: 0.9rem;
             display: flex;
@@ -359,8 +420,51 @@
             transition: color 0.2s;
         }
 
-        .contact-info a:hover {
-            color: #90cdf4;
+        .contact-grid a:hover {
+            color: #63b3ed;
+        }
+
+        .footer-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .footer-btn.primary {
+            background: #0078D4;
+            color: white;
+            box-shadow: 0 2px 10px rgba(0,120,212,0.4);
+        }
+
+        .footer-btn.primary:hover {
+            background: #106ebe;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(0,120,212,0.5);
+        }
+
+        .footer-btn.secondary {
+            background: transparent;
+            color: #a0aec0;
+            border: 1.5px solid #4a5568;
+        }
+
+        .footer-btn.secondary:hover {
+            color: white;
+            border-color: #718096;
+            transform: translateY(-1px);
         }
 
         /* Responsive */
@@ -378,8 +482,8 @@
                 text-align: center;
             }
 
-            .hero h1 {
-                font-size: 1.4rem;
+            .hero-name {
+                font-size: 1.5rem;
             }
 
             .cta-buttons {
@@ -395,23 +499,36 @@
                 padding: 2rem 1.5rem;
             }
 
-            .services-grid {
+            .skills-grid {
                 grid-template-columns: 1fr;
             }
 
-            .background-grid {
+            .why-grid {
                 grid-template-columns: 1fr;
             }
 
-            .contact-info {
+            .contact-grid {
                 flex-direction: column;
-                gap: 1rem;
+                align-items: center;
+                gap: 0.8rem;
+            }
+
+            .experience-header {
+                flex-direction: column;
             }
         }
 
         @media (max-width: 480px) {
+            .hero {
+                padding: 1.5rem 1rem;
+            }
+
+            .hero-name {
+                font-size: 1.3rem;
+            }
+
             .hero h1 {
-                font-size: 1.25rem;
+                font-size: 1rem;
             }
 
             .profile-photo {
@@ -420,8 +537,8 @@
             }
 
             .cta-button {
-                padding: 0.8rem 1.5rem;
-                font-size: 0.9rem;
+                padding: 0.65rem 1.2rem;
+                font-size: 0.85rem;
             }
 
             .cta-buttons {
@@ -432,6 +549,15 @@
             main {
                 padding: 1.5rem 1rem;
             }
+
+            footer {
+                padding: 2rem 1rem;
+            }
+
+            .footer-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
@@ -440,16 +566,17 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-content">
-                <img src="Kuvat/Andy_Pikku.jpg" alt="Andreas Lang" class="profile-photo">
+                <img src="Kuvat/Andy_Pikku.jpg" alt="Andreas Lang – IT-tukiasiantuntija" class="profile-photo">
                 <div class="hero-text">
-                    <h1>Autan varmistamaan, että ohjelmistosi toimivat oikein.</h1>
-                    <p class="subtitle">Ohjelmistotestausta, QA-työtä ja teknistä tukea projekteihin, joissa virheet halutaan kiinni ennen käyttäjiä.</p>
+                    <div class="hero-name">Andreas Lang</div>
+                    <p class="hero-title">IT-tukiasiantuntija | Microsoft 365 | Service Desk</p>
+                    <h1>Ratkaisukeskeinen IT-tukihenkilö – autan organisaatioita sujuvoittamaan digitaalista arkea ja tukemaan käyttäjiä teknisissä haasteissa.</h1>
                     <div class="cta-buttons">
-                        <a href="mailto:Andreas.lang@saunalahti.fi" class="cta-button">
+                        <a href="mailto:Andreas.lang@saunalahti.fi" class="cta-button primary">
                             <i class="fas fa-envelope"></i> Ota yhteyttä
                         </a>
-                        <a href="#portfolio" class="cta-button secondary">
-                            <i class="fas fa-folder-open"></i> Katso esimerkit työstäni
+                        <a href="https://www.linkedin.com/in/andreas-lang-digi/" target="_blank" class="cta-button secondary">
+                            <i class="fab fa-linkedin"></i> LinkedIn
                         </a>
                     </div>
                 </div>
@@ -457,139 +584,162 @@
         </section>
 
         <main>
-            <!-- Value Proposition -->
-            <div class="value-prop">
-                <h2>Miksi tästä on sinulle hyötyä?</h2>
-                <p>Autan tunnistamaan käyttöliittymä-, toiminnalliset ja rajapintavirheet ennen tuotantoa. Teen testauksesta selkeää, dokumentoitua ja helposti hyödynnettävää kehitystiimeille ja pienille projekteille.</p>
+            <!-- Kuka olen -->
+            <div class="intro">
+                <h2><i class="fas fa-user"></i> Kuka olen</h2>
+                <p>Olen valmistuva ICT-insinööri (AMK) Metropoliasta, suuntautumisena ohjelmistotuotanto. Minulla on yli 6 vuoden kokemus IT-tuesta eri ympäristöissä – julkisella sektorilla, yhdistystoiminnassa ja omissa projekteissa.</p>
+                <p>Kehityn aktiivisesti M365-asiantuntijaksi Microsoft Learn -opintopolkujen ja itsenäisen harjoittelun kautta. Vahva asiakaspalveluosaamiseni ja käytännönläheinen ongelmanratkaisukykyni ovat kehittyneet vuosien käyttäjätukityössä.</p>
+                <p>Etsin IT-tuki / Service Desk / Helpdesk -roolia Helsingin alueella.</p>
             </div>
 
-            <!-- Services -->
+            <!-- Osaamisalueet -->
             <section class="section">
-                <h2 class="section-title">Miten voin auttaa?</h2>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <h3><i class="fas fa-search"></i> Manuaalinen ohjelmistotestaus</h3>
-                        <p>Testaan sovelluksia käyttäjän näkökulmasta ja dokumentoin löydökset selkeästi. Sopii projekteihin, joissa tarvitaan nopeasti lisäsilmäpari.</p>
+                <h2 class="section-title"><i class="fas fa-laptop-code"></i> Mitä osaan</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3><i class="fas fa-headset"></i> IT-tuki & Helpdesk</h3>
+                        <ul>
+                            <li>Käyttäjätuki ja ongelmanratkaisu</li>
+                            <li>Työasemien asennus ja konfigurointi</li>
+                            <li>Etätuki ja lähituki</li>
+                            <li>Tikettijärjestelmät ja priorisointi</li>
+                        </ul>
                     </div>
-                    <div class="service-card">
-                        <h3><i class="fas fa-desktop"></i> UI- ja API-testaus</h3>
-                        <p>Testaan käyttöliittymiä ja rajapintoja varmistaakseni, että perustoiminnot ja kriittiset polut toimivat odotetusti.</p>
+                    <div class="skill-card">
+                        <h3><i class="fab fa-microsoft"></i> Microsoft 365</h3>
+                        <ul>
+                            <li>Outlook, Teams, OneDrive, SharePoint</li>
+                            <li>Käyttäjätunnusten hallinta</li>
+                            <li>Sähköpostiongelmien ratkaisu</li>
+                            <li>Microsoft Learn -opintopolut käynnissä</li>
+                        </ul>
+                        <span class="badge"><i class="fas fa-crosshairs"></i> Tavoite: MS-900</span>
                     </div>
-                    <div class="service-card">
-                        <h3><i class="fas fa-file-alt"></i> Testausdokumentaatio ja bugiraportointi</h3>
-                        <p>Laadin testitapaukset, tarkistuslistat ja bugiraportit, joita kehittäjien on helppo hyödyntää.</p>
+                    <div class="skill-card">
+                        <h3><i class="fas fa-desktop"></i> Windows & Laitehallinta</h3>
+                        <ul>
+                            <li>Windows-käyttöjärjestelmien tuki</li>
+                            <li>Tulostinten ja oheislaitteiden hallinta</li>
+                            <li>Perusverkkotuki (WLAN, VPN, yhteysongelmat)</li>
+                            <li>Ohjelmistoasennukset ja päivitykset</li>
+                        </ul>
                     </div>
-                    <div class="service-card">
-                        <h3><i class="fas fa-robot"></i> Kevyt testiautomaatio</h3>
-                        <p>Rakennan yksinkertaisia automaatiotestejä tukemaan manuaalista testausta ja regressiotestausta.</p>
+                    <div class="skill-card">
+                        <h3><i class="fas fa-plus-circle"></i> Lisäosaaminen</h3>
+                        <ul>
+                            <li>WordPress-sivustojen ylläpito ja kehitys</li>
+                            <li>Ohjelmistotestaus (manuaalinen + automaatio)</li>
+                            <li>Git-versionhallinta</li>
+                            <li>Dokumentointi ja käyttöohjeiden laatiminen</li>
+                        </ul>
                     </div>
                 </div>
             </section>
 
-            <!-- CTA mid-page -->
-            <div class="cta-section">
-                <a href="mailto:Andreas.lang@saunalahti.fi" class="cta-button">
-                    <i class="fas fa-comments"></i> Keskustellaan tarpeestasi
-                </a>
-            </div>
+            <!-- Työkokemus -->
+            <section class="section">
+                <h2 class="section-title"><i class="fas fa-briefcase"></i> Työkokemus</h2>
 
-            <!-- Portfolio -->
-            <section class="section" id="portfolio">
-                <h2 class="section-title">Esimerkkejä työstäni</h2>
-
-                <div class="portfolio-item">
-                    <h3>Kirjautumistoiminnon testaus</h3>
-                    <div class="portfolio-detail">
-                        <strong>Haaste:</strong>
-                        <p>Login-toiminnallisuus tarvitsi kattavan testauskattavuuden ja dokumentaation ennen julkaisua.</p>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3><i class="fas fa-building" style="color:#0078D4; margin-right:0.4rem;"></i> IT-tukiharjoittelija – Helsingin kaupunki</h3>
+                        <span class="period">2018</span>
                     </div>
-                    <div class="portfolio-detail">
-                        <strong>Mitä tein:</strong>
-                        <p>Suunnittelin 8 testitapausta käyttäen black-box -tekniikoita (equivalence partitioning, boundary value analysis). Dokumentoin löydökset ja laadin bugiraportin tietoturvaongelmasta.</p>
-                    </div>
-                    <div class="portfolio-detail">
-                        <strong>Hyöty:</strong>
-                        <p>Selkeä testidokumentaatio, jota tiimi voi käyttää jatkossa. Tietoturvaongelma korjattiin ennen julkaisua.</p>
-                    </div>
-                    <div class="portfolio-tags">
-                        <span>Test Cases</span>
-                        <span>Bug Report</span>
-                        <span>Black-box Testing</span>
-                    </div>
-                    <div class="portfolio-link">
-                        <a href="portfolio/manual-testing-login.html" target="_blank"><i class="fas fa-external-link-alt"></i> Katso dokumentaatio</a>
-                    </div>
+                    <ul>
+                        <li>Käyttäjätuki: sähköpostiongelmat, käyttäjätunnukset, salasanojen palautus</li>
+                        <li>Sovellusten asennus ja käyttöönotto työasemille</li>
+                        <li>Tulostinongelmien ratkaisu ja konfigurointi</li>
+                        <li>Etäyhteyksien koulutus ja opastus käyttäjille</li>
+                    </ul>
+                    <p class="learning"><i class="fas fa-lightbulb"></i> Julkisen sektorin IT-ympäristö, suuri käyttäjämäärä, tikettipohjainen työ</p>
                 </div>
 
-                <div class="portfolio-item">
-                    <h3>Testausstrategia AI-generoidulle koodille (opinnäytetyö)</h3>
-                    <div class="portfolio-detail">
-                        <strong>Haaste:</strong>
-                        <p>AI-generoidun koodin laatu vaihtelee. Miten testata sitä järjestelmällisesti ja tehokkaasti?</p>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3><i class="fas fa-theater-masks" style="color:#0078D4; margin-right:0.4rem;"></i> IT-tuki – Kivinokan Kesäteatteri / Teatteri Tuli Ry</h3>
+                        <span class="period">2012 – nykyhetki</span>
                     </div>
-                    <div class="portfolio-detail">
-                        <strong>Mitä tein:</strong>
-                        <p>Rakensin kolmitasoisen testausstrategian: Jest unit-testit, Supertest API-testit, Playwright E2E-testit. 17 testiä yhteensä, kattava dokumentaatio.</p>
+                    <ul>
+                        <li>Sähköpostiongelmien ratkaisu (pilvipalveluratkaisut suurille liitetiedostoille)</li>
+                        <li>Excel-tiedostojen käyttöönotto harjoitusaikataulujen hallintaan</li>
+                        <li>WordPress-sivuston ylläpito ja päivitykset (2022–)</li>
+                        <li>Yleinen IT-neuvonta ja tuki yhdistyksen jäsenille</li>
+                    </ul>
+                    <p class="learning"><i class="fas fa-lightbulb"></i> Oma-aloitteisuus, käyttäjälähtöinen ongelmanratkaisu, pitkäaikainen sitoutuminen</p>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3><i class="fas fa-vial" style="color:#0078D4; margin-right:0.4rem;"></i> Ohjelmistotestaus – Projektit & opinnäytetyö</h3>
+                        <span class="period">2024 – 2025</span>
                     </div>
-                    <div class="portfolio-detail">
-                        <strong>Hyöty:</strong>
-                        <p>Toistettava prosessi AI-koodin laadunvarmistukseen. Dokumentoitu strategia, jota voi soveltaa muihin projekteihin.</p>
+                    <ul>
+                        <li>Attend-projektin testausstrategian suunnittelu (opinnäytetyö, Metropolia)</li>
+                        <li>Manuaalinen testaus, UI-testaus, API-testaus</li>
+                        <li>Työkalut: Playwright, Jest, Supertest, Postman</li>
+                    </ul>
+                    <p class="learning"><i class="fas fa-lightbulb"></i> Järjestelmällinen dokumentointi, laadunvarmistuksen prosessit</p>
+                </div>
+            </section>
+
+            <!-- Koulutus -->
+            <section class="section">
+                <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Koulutus</h2>
+                <div class="education-list">
+                    <div class="education-item">
+                        <i class="fas fa-university"></i>
+                        <div class="edu-content">
+                            <strong>ICT-insinööri (AMK) – Metropolia</strong>
+                            <span>2021–2026 | Ohjelmistotuotanto</span>
+                        </div>
                     </div>
-                    <div class="portfolio-tags">
-                        <span>Jest</span>
-                        <span>Supertest</span>
-                        <span>Playwright</span>
-                        <span>Test Strategy</span>
+                    <div class="education-item">
+                        <i class="fas fa-school"></i>
+                        <div class="edu-content">
+                            <strong>Datanomi / Peliohjelmointi – Taitotalo</strong>
+                            <span>2019–2021</span>
+                        </div>
+                    </div>
+                    <div class="education-item">
+                        <i class="fab fa-microsoft"></i>
+                        <div class="edu-content">
+                            <strong>Microsoft Learn – M365 Fundamentals</strong>
+                            <span>Opintopolut käynnissä</span>
+                            <div class="in-progress"><i class="fas fa-crosshairs"></i> Tavoite: MS-900 sertifikaatti</div>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Background (compact) -->
+            <!-- Miksi juuri minut -->
             <section class="section">
-                <h2 class="section-title">Tausta lyhyesti</h2>
-                <div class="background-grid">
-                    <div class="background-column">
-                        <h3>Koulutus</h3>
-                        <div class="background-item">
-                            <strong>ICT-insinööri (AMK)</strong>
-                            <span>Metropolia 2021-2026, Ohjelmistotuotanto</span>
-                        </div>
-                        <div class="background-item">
-                            <strong>Datanomi</strong>
-                            <span>Taitotalo 2019-2021</span>
-                        </div>
+                <h2 class="section-title"><i class="fas fa-star"></i> Miksi juuri minut?</h2>
+                <div class="why-grid">
+                    <div class="why-card">
+                        <h3><i class="fas fa-bullseye"></i> Ratkaisukeskeisyys</h3>
+                        <p>"Yli 6 vuoden kokemus käyttäjätuesta on opettanut löytämään ratkaisun nopeasti – ja selittämään sen ymmärrettävästi."</p>
                     </div>
-                    <div class="background-column">
-                        <h3>Kokemus</h3>
-                        <div class="background-item">
-                            <strong>6 vuotta IT-tuki</strong>
-                            <span>Ongelmanratkaisu, käyttäjäkoulutus</span>
-                        </div>
-                        <div class="background-item">
-                            <strong>WordPress-kehitys</strong>
-                            <span>Teatteri Tuli Ry 2022-</span>
-                        </div>
+                    <div class="why-card">
+                        <h3><i class="fas fa-comments"></i> Asiakaspalvelutaito</h3>
+                        <p>"25 vuoden teatterikokemus on kehittänyt esiintymis-, viestintä- ja tiimityötaitoja, jotka tekevät IT-tuesta miellyttävää käyttäjälle."</p>
                     </div>
-                </div>
-                <div style="margin-top: 1.2rem;">
-                    <h3 style="font-size: 0.95rem; color: #667eea; margin-bottom: 0.6rem;">Työkalut</h3>
-                    <div class="skills-compact">
-                        <span class="skill-tag">Playwright</span>
-                        <span class="skill-tag">Jest</span>
-                        <span class="skill-tag">Postman</span>
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">Python</span>
+                    <div class="why-card">
+                        <h3><i class="fas fa-rocket"></i> Oppimishalu</h3>
+                        <p>"Opiskelen aktiivisesti M365-ympäristöä ja tähtään sertifiointiin. Uuden oppiminen on minulle luontevaa – datanomista insinööriksi."</p>
+                    </div>
+                    <div class="why-card">
+                        <h3><i class="fas fa-network-wired"></i> Monipuolinen IT-tausta</h3>
+                        <p>"Ohjelmoinnista testaukseen, WordPressistä palvelinhallintaan – ymmärrän IT-kokonaisuuden laajasti."</p>
                     </div>
                 </div>
             </section>
         </main>
 
-        <!-- Footer / Contact -->
+        <!-- Footer / CTA & Yhteystiedot -->
         <footer>
-            <h2>Tarvitsetko testausta tai QA-apua?</h2>
-            <p class="subtitle">Ota yhteyttä matalalla kynnyksellä – voimme aloittaa pienestä tehtävästä tai keskustella tarpeestasi.</p>
-            <div class="contact-info">
+            <h2>Otetaan yhteyttä!</h2>
+            <p class="subtitle">Etsin IT-tuki / Service Desk -roolia Helsingin alueella. Ota yhteyttä – keskustellaan miten voin auttaa organisaatiotasi!</p>
+            <div class="contact-grid">
                 <a href="mailto:Andreas.lang@saunalahti.fi">
                     <i class="fas fa-envelope"></i> Andreas.lang@saunalahti.fi
                 </a>
@@ -603,9 +753,14 @@
                     <i class="fab fa-github"></i> GitHub
                 </a>
             </div>
-            <a href="mailto:Andreas.lang@saunalahti.fi" class="cta-button">
-                <i class="fas fa-paper-plane"></i> Ota yhteyttä nyt
-            </a>
+            <div class="footer-buttons">
+                <a href="mailto:Andreas.lang@saunalahti.fi" class="footer-btn primary">
+                    <i class="fas fa-paper-plane"></i> Lähetä sähköposti
+                </a>
+                <a href="https://www.linkedin.com/in/andreas-lang-digi/" target="_blank" class="footer-btn secondary">
+                    <i class="fab fa-linkedin"></i> LinkedIn-profiili
+                </a>
+            </div>
         </footer>
     </div>
 </body>

@@ -1,0 +1,84 @@
+Tehtävä:
+Päivitä www.andynserveri.fi
+ -sivun sisältö myynti- ja kontaktihakuiseksi käyttäen alla olevia valmiita tekstejä sellaisenaan.
+Älä keksi uusia markkinointilauseita, vaan sijoita nämä selkeästi ja loogisesti sivun rakenteeseen.
+
+1️⃣ HERO-OSIO (YLÄOSA, NÄKYVISSÄ ILMAN SCROLLAUSTA)
+
+Pääotsikko (H1):
+“Autan varmistamaan, että ohjelmistosi toimivat oikein.”
+
+Alipääotsikko:
+Ohjelmistotestausta, QA-työtä ja teknistä tukea projekteihin, joissa virheet halutaan kiinni ennen käyttäjiä.
+
+CTA-painike (ensisijainen):
+“Ota yhteyttä”
+→ avaa sähköpostin tai yhteydenottolomakkeen
+
+CTA-painike (toissijainen):
+“Katso esimerkit työstäni”
+→ vie portfolio-osioon
+
+2️⃣ ARVOLUPAUS (HERO-OSION ALLE)
+
+Otsikko:
+“Miksi tästä on sinulle hyötyä?”
+
+Teksti:
+Autan tunnistamaan käyttöliittymä-, toiminnalliset ja rajapintavirheet ennen tuotantoa.
+Teen testauksesta selkeää, dokumentoitua ja helposti hyödynnettävää kehitystiimeille ja pienille projekteille.
+
+3️⃣ PALVELUT-OSIO (“MITÄ VOIT OSTAA MINULTA”)
+
+Otsikko:
+“Miten voin auttaa?”
+
+Palvelu 1 – Manuaalinen ohjelmistotestaus
+Testaan sovelluksia käyttäjän näkökulmasta ja dokumentoin löydökset selkeästi. Sopii projekteihin, joissa tarvitaan nopeasti lisäsilmäpari.
+
+Palvelu 2 – UI- ja API-testaus
+Testaan käyttöliittymiä ja rajapintoja varmistaakseni, että perustoiminnot ja kriittiset polut toimivat odotetusti.
+
+Palvelu 3 – Testausdokumentaatio ja bugiraportointi
+Laadin testitapaukset, tarkistuslistat ja bugiraportit, joita kehittäjien on helppo hyödyntää.
+
+Palvelu 4 – Kevyt testiautomaatio
+Rakennan yksinkertaisia automaatiotestejä tukemaan manuaalista testausta ja regressiotestausta.
+
+CTA palveluiden jälkeen:
+“Keskustellaan tarpeestasi”
+
+4️⃣ PORTFOLIO-OSIO (KONTEKSTI LISÄTTÄVÄ)
+
+Lisää jokaisen portfolio-esimerkin yhteyteen nämä alaotsikot:
+
+Haaste:
+Mitä haluttiin testata tai varmistaa?
+
+Mitä tein:
+Miten testaus toteutettiin (manuaalinen, automaatio, dokumentointi)?
+
+Hyöty:
+Mitä tämä antoi projektille tai kehitystiimille?
+
+5️⃣ YHTEYDENOTTO-OSIO (SIVUN LOPPU)
+
+Otsikko:
+“Tarvitsetko testausta tai QA-apua?”
+
+Teksti:
+Ota yhteyttä matalalla kynnyksellä – voimme aloittaa pienestä tehtävästä tai keskustella tarpeestasi.
+
+CTA-painike:
+“Ota yhteyttä nyt”
+
+6️⃣ YLEISET VAATIMUKSET
+
+– Säilytä sivun selkeys ja skannattavuus
+– CTA näkyy useassa kohdassa sivua
+– Ei kliseitä (“intohimoinen”, “unelmatyö”)
+– Sivun tulee tuntua siltä, että minut voi palkata heti pieneenkin tehtävään
+
+Lopputavoite:
+Sivun lukijan pitää ajatella:
+“Tälle kaverille voisi antaa testaus- tai QA-homman tai ainakin laittaa viestin.”

@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andreas Lang - Ohjelmistotestaus & QA | Varmistan että sovelluksesi toimii</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #2d3748;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+            color: white;
+            padding: 3rem 2rem;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid #667eea;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .hero h1 {
+            font-size: 1.7rem;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .hero .subtitle {
+            font-size: 1rem;
+            color: #cbd5e0;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.9rem 1.8rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        .cta-button i {
+            margin-right: 0.5rem;
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid #cbd5e0;
+            box-shadow: none;
+        }
+
+        .cta-button.secondary:hover {
+            background: rgba(255,255,255,0.1);
+            box-shadow: none;
+        }
+
+        /* Main Content */
+        main {
+            padding: 2.5rem 2rem;
+        }
+
+        /* Section styling */
+        .section {
+            margin-bottom: 2.5rem;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            color: #2d3748;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #667eea;
+            display: inline-block;
+        }
+
+        /* Value Proposition */
+        .value-prop {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 1.8rem;
+            border-radius: 12px;
+            border-left: 5px solid #667eea;
+            margin-bottom: 2.5rem;
+        }
+
+        .value-prop h2 {
+            font-size: 1.2rem;
+            color: #2d3748;
+            margin-bottom: 0.8rem;
+        }
+
+        .value-prop p {
+            font-size: 1rem;
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.2rem;
+        }
+
+        .service-card {
+            background: #f7fafc;
+            padding: 1.3rem;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        .service-card h3 {
+            font-size: 1rem;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .service-card p {
+            font-size: 0.9rem;
+            color: #4a5568;
+            line-height: 1.5;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: #edf2f7;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .cta-section .cta-button {
+            margin-top: 0;
+        }
+
+        /* Portfolio */
+        .portfolio-item {
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 1.2rem;
+        }
+
+        .portfolio-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .portfolio-item h3 {
+            font-size: 1.05rem;
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-detail {
+            margin-bottom: 0.8rem;
+        }
+
+        .portfolio-detail:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .portfolio-detail strong {
+            color: #667eea;
+            font-size: 0.85rem;
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+
+        .portfolio-detail p {
+            font-size: 0.9rem;
+            color: #4a5568;
+        }
+
+        .portfolio-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 1rem;
+        }
+
+        .portfolio-tags span {
+            background: #667eea;
+            color: white;
+            padding: 0.25rem 0.7rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+        }
+
+        .portfolio-link {
+            margin-top: 1rem;
+        }
+
+        .portfolio-link a {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .portfolio-link a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+
+        /* Background section */
+        .background-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .background-column h3 {
+            font-size: 0.95rem;
+            color: #667eea;
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .background-item {
+            margin-bottom: 0.7rem;
+            font-size: 0.85rem;
+        }
+
+        .background-item strong {
+            color: #4a5568;
+            display: block;
+        }
+
+        .background-item span {
+            color: #718096;
+        }
+
+        .skills-compact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .skill-tag {
+            background: #e2e8f0;
+            color: #4a5568;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+            color: white;
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+
+        footer h2 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            color: white;
+        }
+
+        footer .subtitle {
+            font-size: 1rem;
+            color: #cbd5e0;
+            margin-bottom: 1.5rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info a {
+            color: #cbd5e0;
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: color 0.2s;
+        }
+
+        .contact-info a:hover {
+            color: #90cdf4;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 2rem 1.5rem;
+            }
+
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text {
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 1.4rem;
+            }
+
+            .cta-buttons {
+                justify-content: center;
+            }
+
+            .profile-photo {
+                width: 130px;
+                height: 130px;
+            }
+
+            main {
+                padding: 2rem 1.5rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .background-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.25rem;
+            }
+
+            .profile-photo {
+                width: 110px;
+                height: 110px;
+            }
+
+            .cta-button {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            main {
+                padding: 1.5rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <img src="Kuvat/Andy_Pikku.jpg" alt="Andreas Lang" class="profile-photo">
+                <div class="hero-text">
+                    <h1>Autan varmistamaan, että ohjelmistosi toimivat oikein.</h1>
+                    <p class="subtitle">Ohjelmistotestausta, QA-työtä ja teknistä tukea projekteihin, joissa virheet halutaan kiinni ennen käyttäjiä.</p>
+                    <div class="cta-buttons">
+                        <a href="mailto:Andreas.lang@saunalahti.fi" class="cta-button">
+                            <i class="fas fa-envelope"></i> Ota yhteyttä
+                        </a>
+                        <a href="#portfolio" class="cta-button secondary">
+                            <i class="fas fa-folder-open"></i> Katso esimerkit työstäni
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <main>
+            <!-- Value Proposition -->
+            <div class="value-prop">
+                <h2>Miksi tästä on sinulle hyötyä?</h2>
+                <p>Autan tunnistamaan käyttöliittymä-, toiminnalliset ja rajapintavirheet ennen tuotantoa. Teen testauksesta selkeää, dokumentoitua ja helposti hyödynnettävää kehitystiimeille ja pienille projekteille.</p>
+            </div>
+
+            <!-- Services -->
+            <section class="section">
+                <h2 class="section-title">Miten voin auttaa?</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3><i class="fas fa-search"></i> Manuaalinen ohjelmistotestaus</h3>
+                        <p>Testaan sovelluksia käyttäjän näkökulmasta ja dokumentoin löydökset selkeästi. Sopii projekteihin, joissa tarvitaan nopeasti lisäsilmäpari.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3><i class="fas fa-desktop"></i> UI- ja API-testaus</h3>
+                        <p>Testaan käyttöliittymiä ja rajapintoja varmistaakseni, että perustoiminnot ja kriittiset polut toimivat odotetusti.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3><i class="fas fa-file-alt"></i> Testausdokumentaatio ja bugiraportointi</h3>
+                        <p>Laadin testitapaukset, tarkistuslistat ja bugiraportit, joita kehittäjien on helppo hyödyntää.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3><i class="fas fa-robot"></i> Kevyt testiautomaatio</h3>
+                        <p>Rakennan yksinkertaisia automaatiotestejä tukemaan manuaalista testausta ja regressiotestausta.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA mid-page -->
+            <div class="cta-section">
+                <a href="mailto:Andreas.lang@saunalahti.fi" class="cta-button">
+                    <i class="fas fa-comments"></i> Keskustellaan tarpeestasi
+                </a>
+            </div>
+
+            <!-- Portfolio -->
+            <section class="section" id="portfolio">
+                <h2 class="section-title">Esimerkkejä työstäni</h2>
+
+                <div class="portfolio-item">
+                    <h3>Kirjautumistoiminnon testaus</h3>
+                    <div class="portfolio-detail">
+                        <strong>Haaste:</strong>
+                        <p>Login-toiminnallisuus tarvitsi kattavan testauskattavuuden ja dokumentaation ennen julkaisua.</p>
+                    </div>
+                    <div class="portfolio-detail">
+                        <strong>Mitä tein:</strong>
+                        <p>Suunnittelin 8 testitapausta käyttäen black-box -tekniikoita (equivalence partitioning, boundary value analysis). Dokumentoin löydökset ja laadin bugiraportin tietoturvaongelmasta.</p>
+                    </div>
+                    <div class="portfolio-detail">
+                        <strong>Hyöty:</strong>
+                        <p>Selkeä testidokumentaatio, jota tiimi voi käyttää jatkossa. Tietoturvaongelma korjattiin ennen julkaisua.</p>
+                    </div>
+                    <div class="portfolio-tags">
+                        <span>Test Cases</span>
+                        <span>Bug Report</span>
+                        <span>Black-box Testing</span>
+                    </div>
+                    <div class="portfolio-link">
+                        <a href="portfolio/manual-testing-login.html" target="_blank"><i class="fas fa-external-link-alt"></i> Katso dokumentaatio</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <h3>Testausstrategia AI-generoidulle koodille (opinnäytetyö)</h3>
+                    <div class="portfolio-detail">
+                        <strong>Haaste:</strong>
+                        <p>AI-generoidun koodin laatu vaihtelee. Miten testata sitä järjestelmällisesti ja tehokkaasti?</p>
+                    </div>
+                    <div class="portfolio-detail">
+                        <strong>Mitä tein:</strong>
+                        <p>Rakensin kolmitasoisen testausstrategian: Jest unit-testit, Supertest API-testit, Playwright E2E-testit. 17 testiä yhteensä, kattava dokumentaatio.</p>
+                    </div>
+                    <div class="portfolio-detail">
+                        <strong>Hyöty:</strong>
+                        <p>Toistettava prosessi AI-koodin laadunvarmistukseen. Dokumentoitu strategia, jota voi soveltaa muihin projekteihin.</p>
+                    </div>
+                    <div class="portfolio-tags">
+                        <span>Jest</span>
+                        <span>Supertest</span>
+                        <span>Playwright</span>
+                        <span>Test Strategy</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Background (compact) -->
+            <section class="section">
+                <h2 class="section-title">Tausta lyhyesti</h2>
+                <div class="background-grid">
+                    <div class="background-column">
+                        <h3>Koulutus</h3>
+                        <div class="background-item">
+                            <strong>ICT-insinööri (AMK)</strong>
+                            <span>Metropolia 2021-2026, Ohjelmistotuotanto</span>
+                        </div>
+                        <div class="background-item">
+                            <strong>Datanomi</strong>
+                            <span>Taitotalo 2019-2021</span>
+                        </div>
+                    </div>
+                    <div class="background-column">
+                        <h3>Kokemus</h3>
+                        <div class="background-item">
+                            <strong>6 vuotta IT-tuki</strong>
+                            <span>Ongelmanratkaisu, käyttäjäkoulutus</span>
+                        </div>
+                        <div class="background-item">
+                            <strong>WordPress-kehitys</strong>
+                            <span>Teatteri Tuli Ry 2022-</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-top: 1.2rem;">
+                    <h3 style="font-size: 0.95rem; color: #667eea; margin-bottom: 0.6rem;">Työkalut</h3>
+                    <div class="skills-compact">
+                        <span class="skill-tag">Playwright</span>
+                        <span class="skill-tag">Jest</span>
+                        <span class="skill-tag">Postman</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Python</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer / Contact -->
+        <footer>
+            <h2>Tarvitsetko testausta tai QA-apua?</h2>
+            <p class="subtitle">Ota yhteyttä matalalla kynnyksellä – voimme aloittaa pienestä tehtävästä tai keskustella tarpeestasi.</p>
+            <div class="contact-info">
+                <a href="mailto:Andreas.lang@saunalahti.fi">
+                    <i class="fas fa-envelope"></i> Andreas.lang@saunalahti.fi
+                </a>
+                <a href="tel:+358458839229">
+                    <i class="fas fa-phone"></i> +358 45 883 9229
+                </a>
+                <a href="https://www.linkedin.com/in/andreas-lang-digi/" target="_blank">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://github.com/andyMcLang" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+            <a href="mailto:Andreas.lang@saunalahti.fi" class="cta-button">
+                <i class="fas fa-paper-plane"></i> Ota yhteyttä nyt
+            </a>
+        </footer>
+    </div>
+</body>
+</html>

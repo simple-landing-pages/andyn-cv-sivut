@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push)",
+      "Bash(python:*)",
+      "Bash(pip install:*)",
+      "Bash(copy \"D:\\\\Nettisivuprojektit\\\\Andyn CV-Landing Page sivut by Claude Code\\\\index.html\" \"D:\\\\Nettisivuprojektit\\\\Andyn CV-Landing Page sivut by Claude Code\\\\index_backup_qa.html\")"
+    ]
+  }
+}
